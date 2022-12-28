@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {Book} from "./components/Book";
+import {data} from "./data/Data"
+
+
 
 function App() {
+    console.log(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <section className={'books'}>
+          {data.map(
+              (data)=>{
+                  return(
+                      //Let's use the spread operator
+                      <Book key={data.id} {...data}>
+                      </Book>
+                     /* <Book key={data.id} book={data}/>*/
+                  )
+              }
+          )}
+
+
+      </section>
+
   );
 }
 
