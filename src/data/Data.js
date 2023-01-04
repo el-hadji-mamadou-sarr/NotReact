@@ -13,3 +13,10 @@ export const data =[
             }
 ]
 
+export const People =[
+    {id:1, name:"john"},
+    {id:2, name:"roy"},
+    {id:3, name:"allain"},
+    {id:4, name:"marc"},
+]
+
