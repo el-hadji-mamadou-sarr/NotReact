@@ -4,11 +4,12 @@ import React from "react";
 
 import {Hooksc} from "./Hooksc";
 import {ShortCircuit} from "./ShortCircuit";
+import {ShowHide} from "./ShowHide";
 
 function App() {
 
   return (
-       <ShortCircuit/>
+       <ShowHide/>
 
   );
 }
