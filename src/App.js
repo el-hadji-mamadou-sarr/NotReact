@@ -6,11 +6,12 @@ import {Hooksc} from "./Hooksc";
 import {ShortCircuit} from "./ShortCircuit";
 import {ShowHide} from "./ShowHide";
 import {Forms} from "./Forms";
+import {MultipleInputs} from "./MultipleInputs";
 
 function App() {
 
   return (
-       <Forms/>
+      <MultipleInputs/>
 
   );
 }
