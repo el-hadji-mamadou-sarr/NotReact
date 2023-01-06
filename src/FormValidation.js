@@ -18,8 +18,12 @@ export const FormValidation = ()=>{
     const handleChange = (e)=>{
         const {name, value} = e.target
         setUserValues({...userValues,[name]:value});
-
     }
+
+    useEffect(()=>{
+      setFormError(validate());
+    },[userValues,remember])
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(Object.keys(errors).length === 0){
@@ -29,10 +33,7 @@ export const FormValidation = ()=>{
         }
     }
 
-    useEffect(()=>{
-        validate();
-        console.log(errors);
-    })
+
     const validate = ()=>{
 
         if(!regex_username.test(userValues.first_name)){
@@ -57,7 +58,7 @@ export const FormValidation = ()=>{
         if(!remember){
             errors.remember = "you need to check the remember"
         }else{delete errors.remember}
-        console.log(regex_password.test(userValues.password))
+        return errors;
     }
 
     return (
@@ -73,8 +74,9 @@ export const FormValidation = ()=>{
                            name="first_name"
                            values={userValues.first_name}
                            onChange={handleChange}
-
                     />
+
+                    {formError.first_name && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.first_name}</p>}
                 </div>
                 <div>
                     <label htmlFor="last_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
@@ -86,10 +88,8 @@ export const FormValidation = ()=>{
                            values={userValues.last_name}
                            onChange={handleChange}
                     />
+                    {formError.last_name && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.last_name}</p>}
                 </div>
-
-
-
 
             </div>
             <div className="mb-6">
@@ -102,6 +102,7 @@ export const FormValidation = ()=>{
                        values={userValues.email}
                        onChange={handleChange}
                 />
+                {formError.email && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.email}</p>}
             </div>
             <div className="mb-6">
                 <label htmlFor="password"
@@ -113,6 +114,7 @@ export const FormValidation = ()=>{
                        values={userValues.password}
                        onChange={handleChange}
                 />
+                {formError.password && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.password}</p>}
             </div>
             <div className="mb-6">
                 <label htmlFor="confirm_password"
@@ -124,6 +126,7 @@ export const FormValidation = ()=>{
                        values={userValues.confirm_password}
                        onChange={handleChange}
                 />
+                {formError.confirm_password && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.confirm_password}</p>}
 
             </div>
             <div className="flex items-start mb-6">
@@ -137,7 +140,9 @@ export const FormValidation = ()=>{
                 </div>
                 <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree
                     with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and
-                        conditions</a>.</label>
+                        conditions</a>.
+                </label>
+                {formError.remember && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{formError.remember}</p>}
             </div>
             <button type="submit"
                     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
