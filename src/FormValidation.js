@@ -15,6 +15,7 @@ export const FormValidation = ()=>{
     const [userValues, setUserValues] = useState(initialValues);
     const [remember, setRemember] = useState(false);
     const [formError, setFormError] = useState({});
+    const [isSubmit, setIsSubmit] = useState('');
     const handleChange = (e)=>{
         const {name, value} = e.target
         setUserValues({...userValues,[name]:value});
@@ -27,6 +28,7 @@ export const FormValidation = ()=>{
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(Object.keys(errors).length === 0){
+            setIsSubmit(true);
             console.log("form submitted");
         }else{
             console.log("form have errors")
