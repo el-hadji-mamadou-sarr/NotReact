@@ -11,6 +11,7 @@ import {Reducer} from "./Reducer";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import {Routing} from "./Routing";
 import {Hooks} from "./Hooks";
+import {FormValidation} from "./FormValidation";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
 
               </div>
               <Routes>
-                  <Route path="/" element={<Forms />} />
+                  <Route path="/" element={<FormValidation />} />
                   <Route path="/Hooks" element={<Hooks />} />
                   <Route path="*" element={<h1>Error page</h1> } />
               </Routes>
