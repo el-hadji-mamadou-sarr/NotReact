@@ -4,7 +4,7 @@ export const Forms = ()=>{
 
     // the e is just the event object
     //When we submit the form we want to verify if the value are good
-    //and then save it in our state people or in a real project we can send an api to the server
+    //and then save it in our state cart or in a real project we can send an api to the server
     //If we remember if we wanted to add something in an array without deleting what was there before
     //We can set a function or we can directely do it in the useState function
     const handleSubmit = (e)=>{

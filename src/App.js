@@ -18,13 +18,13 @@ function App() {
   return (
       <Router>
           <div>
-              <div>
+              {/*<div>
                   <Link to="/">Forms</Link>
                   <Link to="/Hooks">Hooks</Link>
 
-              </div>
+              </div>*/}
               <Routes>
-                  <Route path="/" element={<FormValidation />} />
+                  <Route path="/" element={<Reducer />} />
                   <Route path="/Hooks" element={<Hooks />} />
                   <Route path="*" element={<h1>Error page</h1> } />
               </Routes>

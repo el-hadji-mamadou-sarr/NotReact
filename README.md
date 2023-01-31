@@ -72,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `npm install react-router-dom`
 
 This is to build the routing in our application.
+
+### 'npm install --save @reduxjs/toolkit react-redux'
+
+This installs redux toolkit in the application and to connect redux to the application.
