@@ -58,7 +58,7 @@ export const Forms = ()=>{
                     const {id, firstName, email} = person;
                     return (
                         <div key={id} className="flex space-x-2">
-                            <h1>{firstName}</h1>
+                            <h1 data-testid="firstname">{firstName}</h1>
                             <h1>{email}</h1>
                         </div>
                     );

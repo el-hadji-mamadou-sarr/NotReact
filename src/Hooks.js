@@ -43,14 +43,16 @@ export const Hooks = ()=>{
         <div className="flex items-center flex-col space-y-6 my-6">
             <h1 className="font-bold text-4xl text-blue-600">{text}</h1>
             <button className="bg-blue-600 px-14 py-3 rounded-lg text-2xl font-bold text-white" onClick={()=>onClickHandler()}> click</button>
+            <h1>There are <span data-testid = "number-people">{People.length}</span> people</h1>
             {
                 people.map(
                     (person)=> {
                         const {id, name} = person;
                         return (
                             <div className="flex space-x-2" key={id}>
-                                <h1 className="font-bold text-4xl text-blue-600">{name}</h1>
-                                <button className="bg-red-600 px-5 py-3 rounded-lg text-2xl font-bold text-white"
+                                <h1 data-testid={id} className="font-bold text-4xl text-blue-600">{name}</h1>
+
+                                <button data-testid={"remove-"+id} className="bg-red-600 px-5 py-3 rounded-lg text-2xl font-bold text-white"
                                 onClick={()=>removePerson(id)}
                                 >
                                     supprimer

@@ -25,6 +25,7 @@ function App() {
               </div>*/}
               <Routes>
                   <Route path="/" element={<Reducer />} />
+                    <Route path="/" element={<Reducer />} />
                   <Route path="/Hooks" element={<Hooks />} />
                   <Route path="*" element={<h1>Error page</h1> } />
               </Routes>

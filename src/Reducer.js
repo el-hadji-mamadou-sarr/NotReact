@@ -18,15 +18,15 @@ export const Reducer = ()=>{
     }
     return (
         <div>
-           <h1>Items</h1>
+           <h1 data-testid = "header">Items</h1>
 
             {
                 cartItems.map(
                     ({id, title})=>{
                         return(
                             <div key={id}>
-                                <h3 >{title}</h3>
-                                <button onClick={()=>dispatch(removeItems(id)) }>remove</button>
+                                <h3>{title}</h3>
+                                <button data-testid="remove-but" onClick={()=>dispatch(removeItems(id)) }>remove</button>
                             </div>
 
                         );
